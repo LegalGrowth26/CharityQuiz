@@ -1,152 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Charity Quiz Night | Lincoln</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charity Quiz Night | Lincoln Bowls Club · 25 June</title>
+<meta name="description" content="A charity quiz night in aid of Alzheimer's at Lincoln Bowls Club on 25 June. Teams of six, £100. Hosted by John Marshall of Magna Radio.">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      color: #2a2a2a;
-    }
+<meta property="og:title" content="Charity Quiz Night · Lincoln · 25 June">
+<meta property="og:description" content="A night of quizzing, curry and good company — in aid of Alzheimer's.">
+<meta property="og:type" content="website">
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    header {
-      background: #1B3D5A;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<style>
+  :root {
+    --plum: #891F5F;
+    --plum-deep: #6B1649;
+    --pink: #C72977;
+    --pink-soft: #E04A94;
+    --lavender: #DED6E3;
+    --white: #FFFFFF;
+    --ink: #2A1A24;
+    --ink-soft: #4A3B42;
+    --rule: rgba(255, 255, 255, 0.18);
+    --rule-dark: rgba(137, 31, 95, 0.2);
+    --display: "Fraunces", Georgia, serif;
+    --body: "Inter", system-ui, sans-serif;
+  }
 
-    h1 {
-      margin: 0 0 10px;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 10px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  html { scroll-behavior: smooth; }
 
-    .primary {
-      background: #1B3D5A;
-      color: white;
-    }
+  body {
+    font-family: var(--body);
+    background: var(--plum);
+    color: var(--white);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
 
-    .secondary {
-      background: #E5A823;
-      color: black;
-    }
+  a { color: inherit; text-decoration: none; }
 
-    section {
-      padding: 30px 0;
-    }
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
 
-    .card {
-      background: #f7f4ee;
-      padding: 20px;
-      margin: 10px 0;
-      border-radius: 8px;
-    }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 500;
+  }
+  .topbar .mark {
+    display: inline-flex;
+    align-items: center;
+    background: var(--white);
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: transform 0.2s ease;
+  }
+  .topbar .mark:hover { transform: translateY(-1px); }
+  .topbar-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+  .topbar .meta { opacity: 0.7; }
 
-    footer {
-      background: #f7f4ee;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+  .hero {
+    position: relative;
+    padding: 40px 0 120px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(199, 41, 119, 0.45), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(222, 214, 227, 0.12), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 36px; height: 1px;
+    background: var(--pink);
+  }
+
+  h1.hero-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    max-width: 12ch;
+    margin-bottom: 28px;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--lavender);
+    font-weight: 400;
+  }
+
+  .hero-lede {
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    color: var(--lavender);
+    max-width: 48ch;
+    margin-bottom: 48px;
+    line-height: 1.55;
+  }
+
+  .hero-facts {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  .fact .label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    opacity: 0.75;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .fact .value {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    border-radius: 2px;
+  }
+  .btn-primary {
+    background: var(--white);
+    color: var(--plum);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.3);
+    background: var(--lavender);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+  }
+  .btn-secondary:hover {
+    background: var(--white);
+    color: var(--plum);
+    transform: translateY(-2px);
+  }
+  .btn .arrow { transition: transform 0.2s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  section {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pink);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .section-heading {
+    font-family: var(--display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    max-width: 18ch;
+  }
+  .section-heading em {
+    font-style: italic;
+    color: var(--lavender);
+  }
+
+  .about {
+    background: var(--lavender);
+    color: var(--ink);
+  }
+  .about .section-label { color: var(--pink); }
+  .about .section-heading { color: var(--plum-deep); }
+  .about .section-heading em { color: var(--pink); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-body p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    max-width: 52ch;
+  }
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .tickets {
+    background: var(--plum);
+  }
+
+  .tickets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .ticket-card {
+    background: var(--white);
+    color: var(--ink);
+    padding: 48px 40px;
+    border-radius: 3px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .ticket-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.35);
+  }
+  .ticket-card.featured {
+    background: var(--pink);
+    color: var(--white);
+  }
+  .ticket-card .section-label { color: var(--pink); }
+  .ticket-card.featured .section-label { color: var(--lavender); }
+
+  .ticket-card h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .ticket-card:not(.featured) h3 { color: var(--plum-deep); }
+  .ticket-card:not(.featured) h3 em { color: var(--pink); font-style: italic; }
+  .ticket-card.featured h3 em { color: var(--lavender); font-style: italic; }
+
+  .price {
+    font-family: var(--display);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin: 24px 0 8px;
+    letter-spacing: -0.02em;
+  }
+  .ticket-card:not(.featured) .price { color: var(--plum-deep); }
+
+  .price-unit {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+
+  .ticket-card ul {
+    list-style: none;
+    margin: 28px 0 36px;
+  }
+  .ticket-card li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 0.98rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .ticket-card.featured li {
+    border-bottom-color: rgba(255,255,255,0.2);
+  }
+  .ticket-card li::before {
+    content: "";
+    display: block;
+    width: 6px; height: 6px;
+    background: var(--pink);
+    border-radius: 50%;
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+  .ticket-card.featured li::before {
+    background: var(--white);
+  }
+  .ticket-card li:last-child { border-bottom: none; }
+
+  .ticket-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .ticket-card:not(.featured) .btn-primary {
+    background: var(--plum);
+    color: var(--white);
+  }
+  .ticket-card:not(.featured) .btn-primary:hover {
+    background: var(--plum-deep);
+  }
+  .ticket-card.featured .btn-primary {
+    background: var(--white);
+    color: var(--pink);
+  }
+  .ticket-card.featured .btn-primary:hover {
+    background: var(--lavender);
+  }
+
+  .sponsors-wall {
+    background: var(--plum-deep);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+  }
+  .sponsors-wall .section-label { color: var(--pink-soft); }
+  .sponsors-wall h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    max-width: 24ch;
+    margin: 0 auto 48px;
+    line-height: 1.2;
+    color: var(--white);
+  }
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .sponsor-slot {
+    aspect-ratio: 2/1;
+    border: 1px dashed rgba(222, 214, 227, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(222, 214, 227, 0.5);
+    font-weight: 500;
+  }
+
+  footer {
+    background: var(--white);
+    color: var(--ink);
+    padding: 64px 0 48px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .footer-block .label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .footer-block .body {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    color: var(--plum-deep);
+    line-height: 1.3;
+  }
+  .footer-block a {
+    color: var(--plum-deep);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .footer-block a:hover { color: var(--pink); }
+
+  .footer-logo {
+    display: block;
+    height: auto;
+  }
+  .footer-logo-gac {
+    max-width: 200px;
+    max-height: 70px;
+    width: auto;
+  }
+
+  .credit {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .credit-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .credit-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .magna-panel {
+    background: #0A1F3E;
+    padding: 8px 14px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .magna-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+  }
+  .lm-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  @media (max-width: 820px) {
+    .wrap { padding: 0 24px; }
+    .topbar { padding: 20px 24px; font-size: 11px; }
+    .hero { padding: 24px 0 80px; }
+    .hero-facts { gap: 32px; }
+    section { padding: 72px 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .tickets-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .credit { flex-direction: column; align-items: flex-start; gap: 24px; }
+  }
+</style>
 </head>
-
 <body>
 
-<header>
-  <h1>Charity Quiz Night</h1>
-  <p>In aid of Alzheimer’s • 25 June • Lincoln Bowls Club</p>
-
-  <!-- REPLACE THESE LINKS WITH YOUR STRIPE LINKS -->
-  <a href="https://stripe-link-for-team-entry.example" class="btn primary">
-    Enter a Team - £100
+<div class="topbar">
+  <a href="#" class="mark">
+    <img src="images/GA-Carers-Logo.png" alt="Guardian Angel Carers Lincoln &amp; Newark" class="topbar-logo">
   </a>
-
-  <a href="https://stripe-link-for-sponsorship.example" class="btn secondary">
-    Sponsor the Night - £50
-  </a>
-</header>
-
-<div class="container">
-
-  <section>
-    <h2>About the Event</h2>
-    <p>
-      Join us for a brilliant evening of fun, food and fundraising.
-      Hosted by John Marshall from Magna Radio, this quiz night is a great way
-      to bring friends, colleagues or clients together while supporting a
-      fantastic cause.
-    </p>
-  </section>
-
-  <section>
-    <h2>Event Details</h2>
-
-    <div class="card">📅 Date: 25 June</div>
-    <div class="card">📍 Venue: Lincoln Bowls Club</div>
-    <div class="card">🎤 Quiz Master: John Marshall (Magna Radio)</div>
-    <div class="card">🍛 Food: Buffet-style curry</div>
-    <div class="card">👥 Teams: 6 people</div>
-  </section>
-
-  <section>
-    <h2>Enter a Team</h2>
-    <p>
-      Enter a team of six for £100 and enjoy a relaxed, fun evening.
-      Perfect for businesses, friends or local groups.
-    </p>
-
-    <a href="https://stripe-link-for-team-entry.example" class="btn primary">
-      Book Team Entry
-    </a>
-  </section>
-
-  <section>
-    <h2>Sponsorship</h2>
-    <p>
-      Sponsor the night for £50 and promote your business while supporting the event.
-    </p>
-
-    <ul>
-      <li>Your logo on this website</li>
-      <li>Your logo on the big screen on the night</li>
-      <li>A social media shout-out via Magna Radio</li>
-    </ul>
-
-    <a href="https://stripe-link-for-sponsorship.example" class="btn secondary">
-      Become a Sponsor
-    </a>
-  </section>
-
-  <section>
-    <h2>Sponsors</h2>
-    <div class="card">Sponsor logo coming soon</div>
-    <div class="card">Sponsor logo coming soon</div>
-  </section>
-
+  <span class="meta">Lincoln · 25 June 2026</span>
 </div>
 
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">In aid of Alzheimer's</div>
+    <h1 class="hero-title">An evening of <em>quizzing,</em> curry &amp; a cracking cause.</h1>
+    <p class="hero-lede">Bring a team of six, tuck into a buffet curry, and pit your wits against the rest of the room — all to raise money for people living with Alzheimer's across Lincoln and Newark.</p>
+
+    <div class="hero-facts">
+      <div class="fact">
+        <div class="label">Date</div>
+        <div class="value">Thu 25 June</div>
+      </div>
+      <div class="fact">
+        <div class="label">Venue</div>
+        <div class="value">Lincoln Bowls Club</div>
+      </div>
+      <div class="fact">
+        <div class="label">Quiz Master</div>
+        <div class="value">John Marshall</div>
+      </div>
+      <div class="fact">
+        <div class="label">Hosted by</div>
+        <div class="value">Magna Radio</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#tickets" class="btn btn-primary">
+        Enter a team — £100
+        <span class="arrow">→</span>
+      </a>
+      <a href="#tickets" class="btn btn-secondary">
+        Sponsor the night — £50
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-label">The evening</div>
+      <h2 class="section-heading">A proper <em>night out</em> for a proper cause.</h2>
+    </div>
+    <div class="about-body">
+      <p>Hosted by John Marshall of Magna Radio, this is a friendly quiz night with all the trimmings — sharp rounds, a cold drink at the bar, and a buffet-style curry to keep teams fuelled between rounds.</p>
+      <p>Teams are six strong. Bring colleagues, neighbours, the family, or cobble together a group from your local — whoever you rally, every ticket sold goes towards Alzheimer's fundraising in our community.</p>
+      <p>Guardian Angel Carers Lincoln &amp; Newark see the impact of dementia every day. This is our chance to do something about it — and have a brilliant evening while we're at it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tickets" id="tickets">
+  <div class="wrap">
+    <div class="section-label">Book your place</div>
+    <h2 class="section-heading">Two ways to <em>get involved.</em></h2>
+
+    <div class="tickets-grid">
+      <div class="ticket-card">
+        <div class="section-label">Team Entry</div>
+        <h3>A table for <em>six</em></h3>
+        <div class="price">£100</div>
+        <div class="price-unit">Per team · six players</div>
+        <ul>
+          <li>Full quiz entry for your team of six</li>
+          <li>Buffet-style curry included</li>
+          <li>A top night in great company</li>
+          <li>Prizes for the winning team</li>
+        </ul>
+        <a href="https://link.tomcrm.co.uk/widget/form/MsaT1F4kLjRr9FWLSsIa" class="btn btn-primary">
+          Book team entry
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ticket-card featured">
+        <div class="section-label">Sponsorship</div>
+        <h3>Put your name <em>on the night</em></h3>
+        <div class="price">£50</div>
+        <div class="price-unit">Per sponsor</div>
+        <ul>
+          <li>Your logo on this website</li>
+          <li>Your logo on the big screen all evening</li>
+          <li>A shout-out on Magna Radio's quiz-night post</li>
+          <li>Support a cause your community cares about</li>
+        </ul>
+        <a href="https://link.tomcrm.co.uk/widget/form/jVZLmZmTn1UMSvXsEeRX" class="btn btn-primary">
+          Become a sponsor
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sponsors-wall">
+  <div class="wrap">
+    <div class="section-label">With thanks to</div>
+    <h2>The local businesses standing behind this year's quiz.</h2>
+    <div class="sponsor-grid">
+      <div class="sponsor-slot">Your logo here</div>
+      <div class="sponsor-slot">Your logo here</div>
+      <div class="sponsor-slot">Your logo here</div>
+      <div class="sponsor-slot">Your logo here</div>
+      <div class="sponsor-slot">Your logo here</div>
+      <div class="sponsor-slot">Your logo here</div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>Supporting Alzheimer’s fundraising</p>
-  <p>Site built by Lincolnshire Marketing</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-block">
+        <div class="label">Organised by</div>
+        <img src="images/GA-Carers-Logo.png" alt="Guardian Angel Carers Lincoln &amp; Newark" class="footer-logo footer-logo-gac">
+      </div>
+      <div class="footer-block">
+        <div class="label">In support of</div>
+        <div class="body">Alzheimer's fundraising</div>
+      </div>
+      <div class="footer-block">
+        <div class="label">Questions?</div>
+        <div class="body"><a href="mailto:andy.smith@gacarers.co.uk">andy.smith@gacarers.co.uk</a></div>
+      </div>
+    </div>
+    <div class="credit">
+      <div class="credit-item">
+        <span class="credit-label">Media partner</span>
+        <div class="magna-panel">
+          <img src="images/Magna-Radio-Logo-1.png" alt="Magna Radio" class="magna-logo">
+        </div>
+      </div>
+      <div class="credit-item">
+        <span class="credit-label">Site built by</span>
+        <img src="images/LM-Logo.webp" alt="Lincolnshire Marketing" class="lm-logo">
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
