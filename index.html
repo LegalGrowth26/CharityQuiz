@@ -532,6 +532,18 @@
     height: auto;
   }
 
+  .charity-link {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+  }
+  .charity-link:hover { opacity: 0.85; }
+  .charity-logo {
+    display: block;
+    height: 56px;
+    width: auto;
+    max-width: 100%;
+  }
+
   .credit {
     margin-top: 48px;
     padding-top: 32px;
@@ -576,6 +588,60 @@
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     .credit { flex-direction: column; align-items: flex-start; gap: 24px; justify-content: flex-start; }
   }
+
+  /* ---------- COOKIE BANNER ---------- */
+  .cookie-banner {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--white);
+    color: var(--ink);
+    padding: 20px 24px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px -12px rgba(0,0,0,0.4);
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 1.5;
+    display: none;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cookie-banner.is-visible { display: flex; }
+  .cookie-banner p {
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+    color: var(--ink-soft);
+  }
+  .cookie-banner a {
+    color: var(--plum);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 1px;
+  }
+  .cookie-banner a:hover { color: var(--pink); }
+  .cookie-banner button {
+    background: var(--plum);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .cookie-banner button:hover { background: var(--plum-deep); }
+  @media (max-width: 540px) {
+    .cookie-banner { padding: 16px 20px; }
+    .cookie-banner button { width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -589,7 +655,7 @@
 
 <header class="hero">
   <div class="wrap hero-inner">
-    <div class="eyebrow">In aid of Alzheimer's</div>
+    <div class="eyebrow">In aid of The Alzheimer's Society</div>
     <h1 class="hero-title">An evening of <em>quizzing,</em> curry &amp; a cracking cause.</h1>
     <p class="hero-lede">Bring a team of six, tuck into a buffet curry, enjoy a cold drink at the bar, and pit your wits against the rest of the room. All to raise money for people living with Alzheimer's across Lincoln and Newark.</p>
 
@@ -719,7 +785,9 @@
     <div class="footer-grid">
       <div class="footer-block">
         <div class="label">In support of</div>
-        <div class="body"><a href="https://www.alzheimers.org.uk/" target="_blank" rel="noopener">Alzheimer's Society</a></div>
+        <a href="https://www.alzheimers.org.uk/" target="_blank" rel="noopener" class="charity-link">
+          <img src="images/Alzheimers_Society_Logo_2023.svg.png" alt="Alzheimer's Society" class="charity-logo">
+        </a>
       </div>
       <div class="footer-block">
         <div class="label">Venue</div>
@@ -744,6 +812,30 @@
     </div>
   </div>
 </footer>
+
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <p>This site uses minimal cookies. The booking forms and payment process may set additional cookies when you use them. See our <a href="/privacy.html">privacy notice</a> for details.</p>
+  <button type="button" id="cookie-accept">Got it</button>
+</div>
+
+<script>
+  (function() {
+    var KEY = 'cq-cookie-ack-2026';
+    var banner = document.getElementById('cookie-banner');
+    var btn = document.getElementById('cookie-accept');
+    try {
+      if (!localStorage.getItem(KEY)) {
+        banner.classList.add('is-visible');
+      }
+    } catch (e) {
+      banner.classList.add('is-visible');
+    }
+    btn.addEventListener('click', function() {
+      banner.classList.remove('is-visible');
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+    });
+  })();
+</script>
 
 </body>
 </html>
