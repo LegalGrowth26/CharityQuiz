@@ -281,6 +281,14 @@
     max-width: 52ch;
   }
   .about-body p:last-child { margin-bottom: 0; }
+  .inline-link {
+    color: var(--plum-deep);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 1px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .inline-link:hover { color: var(--pink); }
 
   .tickets {
     background: var(--plum);
@@ -292,6 +300,21 @@
     gap: 32px;
     margin-top: 48px;
   }
+
+  .tickets-note {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--lavender);
+    opacity: 0.85;
+  }
+  .tickets-note a {
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+  .tickets-note a:hover { border-bottom-color: var(--white); }
 
   .ticket-card {
     background: var(--white);
@@ -482,7 +505,27 @@
     height: 64px;
     width: auto;
     max-width: 100%;
+    transition: opacity 0.2s ease;
   }
+  .organiser-block a:hover .organiser-logo,
+  .credit-item a:hover .magna-logo,
+  .topbar .mark:hover .topbar-logo {
+    opacity: 0.85;
+  }
+
+  .credit-tag {
+    font-size: 12px;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    letter-spacing: 0.04em;
+  }
+  .credit-tag a {
+    color: var(--plum-deep);
+    border-bottom: 1px solid var(--pink);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+  .credit-tag a:hover { color: var(--pink); }
 
   .footer-logo {
     display: block;
@@ -494,7 +537,7 @@
     padding-top: 32px;
     border-top: 1px solid var(--rule-dark);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 32px;
@@ -538,7 +581,7 @@
 <body>
 
 <div class="topbar">
-  <a href="#" class="mark">
+  <a href="https://www.gacarers.co.uk/lincoln-newark/" target="_blank" rel="noopener" class="mark">
     <img src="images/GA-Carers-Logo.png" alt="Guardian Angel Carers Lincoln &amp; Newark" class="topbar-logo">
   </a>
   <span class="meta">Lincoln · 25 June 2026</span>
@@ -561,7 +604,7 @@
       </div>
       <div class="fact">
         <div class="label">Quiz Master</div>
-        <div class="value">Robert Drury</div>
+        <div class="value"><a href="https://www.linkedin.com/in/robertdrury1/" target="_blank" rel="noopener" class="fact-link">Robert Drury</a></div>
       </div>
       <div class="fact">
         <div class="label">Plus</div>
@@ -589,7 +632,7 @@
       <h2 class="section-heading">A proper <em>night out</em> for a proper cause.</h2>
     </div>
     <div class="about-body">
-      <p>Hosted by Robert Drury, Chairman of Lincoln Business Club, this is a friendly quiz night with all the trimmings. Sharp rounds, a proper bar, and a buffet-style curry to keep teams fuelled between rounds.</p>
+      <p>Hosted by <a href="https://www.linkedin.com/in/robertdrury1/" target="_blank" rel="noopener" class="inline-link">Robert Drury</a>, Chairman of Lincoln Business Club, this is a friendly quiz night with all the trimmings. Sharp rounds, a proper bar, and a buffet-style curry to keep teams fuelled between rounds.</p>
       <p>Teams are six strong. Bring colleagues, neighbours, the family, or cobble together a group from your local. Whoever you rally, every ticket sold goes towards Alzheimer's fundraising in our community.</p>
       <p>Guardian Angel Carers Lincoln &amp; Newark see the impact of dementia every day. Together with Lincolnshire Marketing, we're putting on a brilliant evening to do something about it.</p>
     </div>
@@ -636,6 +679,8 @@
         </a>
       </div>
     </div>
+
+    <p class="tickets-note">All proceeds go to <a href="https://www.alzheimers.org.uk/" target="_blank" rel="noopener">Alzheimer's Society</a>. Bookings are non-refundable. See <a href="/terms.html">booking terms</a>.</p>
   </div>
 </section>
 
@@ -659,18 +704,22 @@
     <div class="organisers">
       <div class="organiser-block">
         <div class="label">Organised by</div>
-        <img src="images/GA-Carers-Logo.png" alt="Guardian Angel Carers Lincoln &amp; Newark" class="organiser-logo">
+        <a href="https://www.gacarers.co.uk/lincoln-newark/" target="_blank" rel="noopener">
+          <img src="images/GA-Carers-Logo.png" alt="Guardian Angel Carers Lincoln &amp; Newark" class="organiser-logo">
+        </a>
       </div>
       <div class="organiser-block">
         <div class="label">In partnership with</div>
-        <img src="images/LM-Logo.webp" alt="Lincolnshire Marketing" class="organiser-logo">
+        <a href="https://www.lincolnshiremarketing.co.uk/" target="_blank" rel="noopener">
+          <img src="images/LM-Logo.webp" alt="Lincolnshire Marketing" class="organiser-logo">
+        </a>
       </div>
     </div>
 
     <div class="footer-grid">
       <div class="footer-block">
         <div class="label">In support of</div>
-        <div class="body">Alzheimer's fundraising</div>
+        <div class="body"><a href="https://www.alzheimers.org.uk/" target="_blank" rel="noopener">Alzheimer's Society</a></div>
       </div>
       <div class="footer-block">
         <div class="label">Venue</div>
@@ -685,7 +734,12 @@
     <div class="credit">
       <div class="credit-item">
         <span class="credit-label">Media partner</span>
-        <img src="images/Magna-Radio-Logo-1.png" alt="Magna Radio" class="magna-logo">
+        <a href="https://www.magnaradio.co.uk/" target="_blank" rel="noopener">
+          <img src="images/Magna-Radio-Logo-1.png" alt="Magna Radio" class="magna-logo">
+        </a>
+      </div>
+      <div class="credit-tag">
+        <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Booking Terms</a> · Website built by <a href="https://www.lincolnshiremarketing.co.uk/" target="_blank" rel="noopener">Lincolnshire Marketing</a> · 2026
       </div>
     </div>
   </div>
