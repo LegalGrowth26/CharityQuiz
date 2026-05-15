@@ -474,6 +474,31 @@
     color: rgba(222, 214, 227, 0.5);
     font-weight: 500;
   }
+  .sponsor-link {
+    aspect-ratio: 2/1;
+    background: var(--white);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .sponsor-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.35);
+  }
+  .sponsor-link.on-dark {
+    background: var(--plum);
+  }
+  .sponsor-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
 
   footer {
     background: var(--white);
@@ -802,10 +827,18 @@
     <div class="section-label">With thanks to</div>
     <h2>The local businesses standing behind this year's quiz.</h2>
     <div class="sponsor-grid">
-      <div class="sponsor-slot">Your logo here</div>
-      <div class="sponsor-slot">Your logo here</div>
-      <div class="sponsor-slot">Your logo here</div>
-      <div class="sponsor-slot">Your logo here</div>
+      <a href="https://apt-legal.co.uk/" target="_blank" rel="noopener" class="sponsor-link on-dark">
+        <img src="assets/APT-legal-logo-white.png" alt="APT Legal" class="sponsor-logo">
+      </a>
+      <a href="https://www.accessaccounts.co.uk/" target="_blank" rel="noopener" class="sponsor-link">
+        <img src="assets/Access-accounts-logo.png" alt="Access Accounts" class="sponsor-logo">
+      </a>
+      <a href="https://juliamcginnva.co.uk/" target="_blank" rel="noopener" class="sponsor-link">
+        <img src="assets/Julia-McGinn-logo.png" alt="Julia McGinn" class="sponsor-logo">
+      </a>
+      <a href="https://petaurumhr.co.uk/" target="_blank" rel="noopener" class="sponsor-link">
+        <img src="assets/Petaurum-hr-logo.png" alt="Petaurum HR" class="sponsor-logo">
+      </a>
       <div class="sponsor-slot">Your logo here</div>
     </div>
   </div>
